@@ -1,57 +1,204 @@
+/* --- Global Resets & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* --- Hero Section & Background Image --- */
+.hero-section {
+    width: 100vw;
+    height: 100vh;
+    /* Link to your background image here */
+    background-image: url('image_3.png');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    /* Darkening overlay for contrast */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+/* --- Header & Navigation (Refined) --- */
+.main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    padding-bottom: 50px;
 }
 
-.container {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    width: 350px;
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
-.form-content h2 {
-    text-align: center;
-    color: #333;
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: white;
+}
+
+/* --- Content Wrapper & Text Area --- */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding-bottom: 50px;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.badge {
+    background-color: #f75c7e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.main-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.sub-headline {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+}
+
+/* --- The Beautiful Member Forms (Integration) --- */
+.form-container {
+    flex: 0 0 400px; /* Width of the form box */
+    padding-left: 50px;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.08); /* Frosted, dark glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Soft blur effect */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-toggle-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.form-toggle-tabs button {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.3s ease, border 0.3s ease;
+}
+
+.form-toggle-tabs button:hover {
+    color: white;
+}
+
+.form-toggle-tabs button.active {
+    color: #f75c7e;
+    border-bottom: 2px solid #f75c7e;
+}
+
+.form-content {
+    display: none; /* Hidden by default */
+}
+
+.form-content.active {
+    display: block; /* Visible when active */
 }
 
 input {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
-button {
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+    outline: none;
+    border-color: #f75c7e;
+}
+
+/* Matches the existing Join Members button style */
+.pink-btn {
     width: 100%;
-    padding: 12px;
-    background-color: #007bff;
+    padding: 15px;
+    background-color: #f75c7e;
     color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 20px;
     font-size: 16px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.toggle-link {
-    color: #007bff;
+    font-weight: 600;
     cursor: pointer;
-    font-weight: bold;
+    margin-top: 10px;
+    transition: transform 0.2s ease, opacity 0.3s ease;
 }
 
-.hidden {
-    display: none;
+.pink-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
