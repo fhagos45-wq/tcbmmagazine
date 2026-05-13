@@ -317,4 +317,37 @@ a{
   .btn{
     padding:12px 25px;
   }
+
+/* MEMBER BUTTON */
+.member-btn{
+  background:linear-gradient(135deg,#ff4d6d,#ff1f4b);
+  color:white;
+
+  padding:14px 28px;
+
+  border-radius:40px;
+
+  font-weight:bold;
+  font-size:15px;
+
+  box-shadow:0 8px 20px rgba(255,77,109,0.35);
+
+  transition:0.35s ease;
+}
+
+.member-btn:hover{
+  transform:translateY(-4px) scale(1.05);
+
+  box-shadow:0 12px 28px rgba(255,77,109,0.45);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .member-btn{
+    margin-top:10px;
+  }
+
+}
+  
 }
