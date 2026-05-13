@@ -72,16 +72,14 @@ a{
   color:#ff4d6d;
 }
 
-/* ========================= */
 /* MEMBERS BUTTON */
-/* ========================= */
 
 .member-btn{
   display:inline-block;
 
   background:linear-gradient(135deg,#ff4d6d,#ff1f4b);
 
-  color:white;
+  color:#ffffff !important;
 
   padding:14px 30px;
 
@@ -98,7 +96,11 @@ a{
 .member-btn:hover{
   transform:translateY(-4px);
 
+  background:linear-gradient(135deg,#ff1f4b,#ff4d6d);
+
   box-shadow:0 14px 28px rgba(255,77,109,0.5);
+
+  color:white;
 }
 
 /* ========================= */
