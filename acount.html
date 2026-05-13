@@ -3,72 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Magazine - Member Access</title>
-    <link rel="stylesheet" href="acount.css">
-    <!-- Google Fonts for typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Member Access | TCB News</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Redesigned Main Section -->
-    <section class="hero-section">
-        <div class="overlay">
-            <div class="main-container">
-                
-                <!-- Redesigned Header/Nav integrated into the hero -->
-                <header class="main-header">
-                    <div class="logo">MAGAZINE</div>
-                    <nav class="main-nav">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Culture</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </nav>
-                </header>
-
-                <div class="content-wrapper">
-                    <!-- Text Content (Matches original design) -->
-                    <div class="text-content">
-                        <span class="badge">Digital Magazine</span>
-                        <h1 class="main-headline">Discover Beautiful <br>Stories & Modern <br>Inspiration</h1>
-                        <p class="sub-headline">Explore travel, fashion, lifestyle, and culture with a premium magazine design that works perfectly on mobile, tablet, and desktop.</p>
-                    </div>
-
-                    <!-- Integrated Member Forms -->
-                    <div class="form-container">
-                        <div class="form-box">
-                            <!-- Dual tabs to switch forms -->
-                            <div class="form-toggle-tabs">
-                                <button id="login-tab" class="active" onclick="showLogin()">Login</button>
-                                <button id="signup-tab" onclick="showSignup()">Create Account</button>
-                            </div>
-
-                            <!-- Login Form -->
-                            <form id="login-form" class="form-content active">
-                                <input type="email" id="login-email" placeholder="Email Address" required>
-                                <input type="password" id="login-password" placeholder="Password" required>
-                                <button type="submit" class="pink-btn">Log In</button>
-                            </form>
-
-                            <!-- Create Account Form (Hidden) -->
-                            <form id="signup-form" class="form-content">
-                                <input type="text" id="signup-name" placeholder="Full Name" required>
-                                <input type="email" id="signup-email" placeholder="Email Address" required>
-                                <input type="password" id="signup-password" placeholder="Choose Password" required>
-                                <button type="submit" class="pink-btn">Sign Up</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                
+    <div class="background-overlay">
+        <div class="auth-card">
+            <div class="form-header">
+                <h2 id="form-title">Welcome Back</h2>
+                <p id="form-subtitle">Please enter your details to continue</p>
             </div>
-        </div>
-    </section>
 
-    <script src="acount.js"></script>
+            <div class="tab-container">
+                <button id="login-tab" class="active" onclick="toggleMode('login')">Login</button>
+                <button id="signup-tab" onclick="toggleMode('signup')">Create Account</button>
+            </div>
+
+            <form id="auth-form">
+                <div id="name-group" class="input-group hidden">
+                    <input type="text" id="full-name" placeholder="Full Name">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn">Access Magazine</button>
+            </form>
+            
+            <div id="api-status" class="status-msg"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
