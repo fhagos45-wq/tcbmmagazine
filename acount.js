@@ -5,6 +5,8 @@ const ANON_KEY = 'sb_publishable_z3gvIQGoxobO3jwqtwXCiw_irgvm6OB';
 
 const supabase = supabase.createClient(PROJECT_URL, ANON_KEY);
 
+
+console.log("Checking connection to Angelina...", supabaseClient);
 let mode = 'login';
 
 function toggleMode(newMode) {
