@@ -1,38 +1,35 @@
-// Function to show the Login form
-function showLogin() {
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    const loginTab = document.getElementById('login-tab');
-    const signupTab = document.getElementById('signup-tab');
+let mode = 'login';
 
-    loginForm.classList.add('active');
-    signupForm.classList.remove('active');
-    loginTab.classList.add('active');
-    signupTab.classList.remove('active');
+function toggleMode(newMode) {
+    mode = newMode;
+    const nameGroup = document.getElementById('name-group');
+    const title = document.getElementById('form-title');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    // Update tabs
+    document.getElementById('login-tab').classList.toggle('active', mode === 'login');
+    document.getElementById('signup-tab').classList.toggle('active', mode === 'signup');
+
+    if (mode === 'signup') {
+        nameGroup.classList.remove('hidden');
+        title.innerText = "Join the Elite";
+        submitBtn.innerText = "Create Account";
+    } else {
+        nameGroup.classList.add('hidden');
+        title.innerText = "Welcome Back";
+        submitBtn.innerText = "Access Magazine";
+    }
 }
 
-// Function to show the Sign Up form
-function showSignup() {
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    const loginTab = document.getElementById('login-tab');
-    const signupTab = document.getElementById('signup-tab');
-
-    loginForm.classList.remove('active');
-    signupForm.classList.add('active');
-    loginTab.classList.remove('active');
-    signupTab.classList.add('active');
-}
-
-// Handle Form Submissions (Demo)
-document.getElementById('login-form').addEventListener('submit', function(e) {
+// Prepare for Database/API connection
+document.getElementById('auth-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    console.log("Login submitted with email:", document.getElementById('login-email').value);
-    alert("Login Demo Successful");
-});
-
-document.getElementById('signup-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    console.log("Sign Up submitted for:", document.getElementById('signup-name').value);
-    alert("Account Demo Created");
+    
+    const email = document.getElementById('email').value;
+    const status = document.getElementById('api-status');
+    
+    status.innerText = `Connecting to your database for ${email}...`;
+    
+    // Here you will eventually add your Supabase code:
+    // supabase.auth.signInWithPassword({ email, password })
 });
