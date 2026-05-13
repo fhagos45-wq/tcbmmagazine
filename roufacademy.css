@@ -44,7 +44,13 @@ a{
   position:sticky;
   top:0;
   z-index:1000;
+
+  gap:30px;
 }
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
 
 .logo{
   color:white;
@@ -59,12 +65,18 @@ a{
 
 .navbar{
   display:flex;
+  justify-content:center;
+  align-items:center;
+
   gap:25px;
+
+  flex:1;
 }
 
 .navbar a{
   color:#ddd;
   font-size:16px;
+
   transition:0.3s;
 }
 
@@ -72,14 +84,16 @@ a{
   color:#ff4d6d;
 }
 
-/* MEMBERS BUTTON */
+/* ========================= */
+/* MEMBER BUTTON */
+/* ========================= */
 
 .member-btn{
   display:inline-block;
 
   background:linear-gradient(135deg,#ff4d6d,#ff1f4b);
 
-  color:#ffffff !important;
+  color:white !important;
 
   padding:14px 30px;
 
@@ -87,6 +101,8 @@ a{
 
   font-size:15px;
   font-weight:bold;
+
+  white-space:nowrap;
 
   transition:0.4s ease;
 
@@ -99,8 +115,6 @@ a{
   background:linear-gradient(135deg,#ff1f4b,#ff4d6d);
 
   box-shadow:0 14px 28px rgba(255,77,109,0.5);
-
-  color:white;
 }
 
 /* ========================= */
@@ -125,6 +139,7 @@ a{
 
 .hero-content{
   max-width:700px;
+
   color:white;
 }
 
