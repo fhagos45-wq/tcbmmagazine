@@ -1,1 +1,69 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Dashboard | TCB News</title>
+    <link rel="stylesheet" href="members.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">TCB NEWS</div>
+            <nav>
+                <ul>
+                    <li class="active">Collections</li>
+                    <li>Latest Issue</li>
+                    <li>Editor's Choice</li>
+                    <li>Settings</li>
+                </ul>
+            </nav>
+            <button class="logout-btn" onclick="logout()">Sign Out</button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-view">
+            <header class="user-header">
+                <h1>Welcome Back, <span id="user-display-name">Member</span></h1>
+                <p>Curating peaceful spaces and modern inspiration for you.</p>
+            </header>
+
+            <section class="magazine-grid">
+                <!-- Magazine Card 1: Modern Architecture -->
+                <div class="mag-card">
+                    <div class="mag-thumb" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="card-info">
+                        <h3>Minimalist Living</h3>
+                        <p>Exploring the peace of empty spaces.</p>
+                        <button class="read-btn">Explore Edition</button>
+                    </div>
+                </div>
+
+                <!-- Magazine Card 2: Peaceful Nature/Interior -->
+                <div class="mag-card">
+                    <div class="mag-thumb" style="background-image: url('https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="card-info">
+                        <h3>Morning Light</h3>
+                        <p>The art of slow living and design.</p>
+                        <button class="read-btn">Explore Edition</button>
+                    </div>
+                </div>
+
+                <!-- Magazine Card 3: Modern Lifestyle -->
+                <div class="mag-card">
+                    <div class="mag-thumb" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="card-info">
+                        <h3>Pure Harmony</h3>
+                        <p>Balancing technology and soul.</p>
+                        <button class="read-btn">Explore Edition</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="members.js"></script>
+</body>
+</html>
