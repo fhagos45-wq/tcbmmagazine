@@ -1,204 +1,111 @@
-/* --- Global Resets & Typography --- */
-* {
+:root {
+    --accent: #f75c7e;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
+    height: 100%;
     font-family: 'Poppins', sans-serif;
-    color: white;
-    overflow-x: hidden;
+    background: #0f0f0f; /* Dark base */
 }
 
-/* --- Hero Section & Background Image --- */
-.hero-section {
-    width: 100vw;
+.background-overlay {
     height: 100vh;
-    /* Link to your background image here */
-    background-image: url('image_3.png');
-    background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-    position: relative;
-}
-
-.overlay {
-    width: 100%;
-    height: 100%;
-    /* Darkening overlay for contrast */
-    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
+    align-items: center;
     justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('your-magazine-image.jpg') center/cover;
 }
 
-.main-container {
-    width: 90%;
-    max-width: 1200px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
+.auth-card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 50px;
+    border-radius: 24px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* --- Header & Navigation (Refined) --- */
-.main-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 50px;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: white;
-}
-
-/* --- Content Wrapper & Text Area --- */
-.content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    padding-bottom: 50px;
-}
-
-.text-content {
-    flex: 1;
-    max-width: 500px;
-}
-
-.badge {
-    background-color: #f75c7e;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.main-headline {
+.form-header h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    line-height: 1.1;
-    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: #aaa;
+    font-size: 0.9rem;
     margin-bottom: 30px;
 }
 
-.sub-headline {
-    font-size: 15px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 40px;
-}
-
-/* --- The Beautiful Member Forms (Integration) --- */
-.form-container {
-    flex: 0 0 400px; /* Width of the form box */
-    padding-left: 50px;
-}
-
-.form-box {
-    background: rgba(255, 255, 255, 0.08); /* Frosted, dark glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); /* Soft blur effect */
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.form-toggle-tabs {
+.tab-container {
     display: flex;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
     margin-bottom: 30px;
+    padding: 5px;
 }
 
-.form-toggle-tabs button {
+.tab-container button {
     flex: 1;
     padding: 10px;
-    background: none;
     border: none;
-    border-bottom: 2px solid transparent;
-    color: rgba(255, 255, 255, 0.6);
+    background: none;
+    color: #888;
     cursor: pointer;
     font-weight: 600;
-    transition: color 0.3s ease, border 0.3s ease;
+    transition: 0.3s;
+    border-radius: 8px;
 }
 
-.form-toggle-tabs button:hover {
+.tab-container button.active {
+    background: var(--accent);
     color: white;
-}
-
-.form-toggle-tabs button.active {
-    color: #f75c7e;
-    border-bottom: 2px solid #f75c7e;
-}
-
-.form-content {
-    display: none; /* Hidden by default */
-}
-
-.form-content.active {
-    display: block; /* Visible when active */
 }
 
 input {
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 10px;
     color: white;
-    font-family: 'Poppins', sans-serif;
-}
-
-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    outline: none;
 }
 
 input:focus {
-    outline: none;
-    border-color: #f75c7e;
+    border-color: var(--accent);
 }
 
-/* Matches the existing Join Members button style */
-.pink-btn {
+.submit-btn {
     width: 100%;
     padding: 15px;
-    background-color: #f75c7e;
-    color: white;
+    background: var(--accent);
     border: none;
-    border-radius: 20px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 30px;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
     margin-top: 10px;
-    transition: transform 0.2s ease, opacity 0.3s ease;
+    transition: transform 0.2s;
 }
 
-.pink-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+.submit-btn:hover {
+    transform: scale(1.02);
+}
+
+.hidden { display: none; }
+
+.status-msg {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--accent);
 }
