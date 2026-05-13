@@ -1,29 +1,38 @@
-
-// Function to switch between Login and Sign Up views
-function toggleForm() {
+// Function to show the Login form
+function showLogin() {
     const loginForm = document.getElementById('login-form');
     const signupForm = document.getElementById('signup-form');
+    const loginTab = document.getElementById('login-tab');
+    const signupTab = document.getElementById('signup-tab');
 
-    loginForm.classList.toggle('hidden');
-    signupForm.classList.toggle('hidden');
+    loginForm.classList.add('active');
+    signupForm.classList.remove('active');
+    loginTab.classList.add('active');
+    signupTab.classList.remove('active');
 }
 
-// Handle Login Submission
+// Function to show the Sign Up form
+function showSignup() {
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const loginTab = document.getElementById('login-tab');
+    const signupTab = document.getElementById('signup-tab');
+
+    loginForm.classList.remove('active');
+    signupForm.classList.add('active');
+    loginTab.classList.remove('active');
+    signupTab.classList.add('active');
+}
+
+// Handle Form Submissions (Demo)
 document.getElementById('login-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const email = document.getElementById('login-email').value;
-    const pass = document.getElementById('login-password').value;
-    
-    console.log("Logging in with:", email, pass);
-    alert("Login attempt successful! (Check console)");
+    console.log("Login submitted with email:", document.getElementById('login-email').value);
+    alert("Login Demo Successful");
 });
 
-// Handle Sign Up Submission
 document.getElementById('signup-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const name = document.getElementById('signup-name').value;
-    const email = document.getElementById('signup-email').value;
-    
-    console.log("Creating account for:", name, email);
-    alert("Account created for " + name);
+    console.log("Sign Up submitted for:", document.getElementById('signup-name').value);
+    alert("Account Demo Created");
 });
